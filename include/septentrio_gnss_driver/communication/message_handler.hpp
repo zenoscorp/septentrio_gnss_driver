@@ -350,7 +350,7 @@ namespace io {
          */
         void assemblePoseWithCovarianceStamped();
 
-        //! Publish GNSS heading from attitude and covariance at the same epoch.
+        //! Assemble the GNSS heading Imu message.
         void assembleHeading();
 
         /**

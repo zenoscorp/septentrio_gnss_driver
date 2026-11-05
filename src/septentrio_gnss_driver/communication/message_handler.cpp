@@ -76,7 +76,7 @@ namespace io {
             covariance.cov_headhead <= 0.0)
             return;
 
-        // Parsing already applies ROS axes; receiver att_offset is not applied twice.
+        // AttEuler includes receiver offsets and ROS axis conversion.
         ImuMsg msg;
         msg.header = attitude.header;
         msg.orientation =
