@@ -697,6 +697,7 @@ The following is a list of ROSaic parameters found in the `config/rover.yaml` fi
     + `publish.navsatfix`: `true` to publish `sensor_msgs/NavSatFix.msg` messages into the topic `/navsatfix`
     + `publish.gpsfix`: `true` to publish `gps_msgs/GPSFix.msg` messages into the topic `/gpsfix`
     + `publish.pose`: `true` to publish `geometry_msgs/PoseWithCovarianceStamped.msg` messages into the topic `/pose`
+    + `publish.heading`: `true` to publish GNSS yaw as `sensor_msgs/Imu` on the relative topic `heading` (default `false`). Requires `receiver_type: gnss` and `use_ros_axis_orientation: true`. Uses valid `AttEuler` and `AttCovEuler` from the same GPS week and time of week, independently of position. Heading and its variance are converted to radians and radians squared; the attitude timestamp and `frame_id` are retained. Roll/pitch have large uncertainty; angular velocity and acceleration are marked unavailable. Existing receiver `att_offset` applies once. No TF input is needed when `get_spatial_config_from_tf: false`. Remap `heading` to `gnss/heading` under the robot namespace.
     + `publish.twist`: `true` to publish `geometry_msgs/TwistWithCovarianceStamped.msg` messages into the topics `/twist` and `/twist_ins` respectively 
     + `publish.diagnostics`: `true` to publish `diagnostic_msgs/DiagnosticArray.msg` messages into the topic `/diagnostics`
     + `publish.insnavcart`: `true` to publish `septentrio_gnss_driver/INSNavCart.msg` message into the topic`/insnavcart` 

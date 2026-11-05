@@ -350,6 +350,9 @@ namespace io {
          */
         void assemblePoseWithCovarianceStamped();
 
+        //! Publish GNSS heading from attitude and covariance at the same epoch.
+        void assembleHeading();
+
         /**
          * @brief "Callback" function when constructing
          * DiagnosticArrayMsg messages

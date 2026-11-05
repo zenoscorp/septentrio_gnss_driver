@@ -318,6 +318,8 @@ struct Settings
     bool publish_gpsfix;
     //! Whether or not to publish the PoseWithCovarianceStampedMsg message
     bool publish_pose;
+    //! Whether to publish GNSS yaw as a heading-only Imu message
+    bool publish_heading = false;
     //! Whether or not to publish the DiagnosticArrayMsg message
     bool publish_diagnostics;
     //! Whether or not to publish the ImuMsg message
